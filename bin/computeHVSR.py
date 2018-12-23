@@ -287,7 +287,7 @@ def getPower(dB,x):
         | |_| |
         |_|_|_|
    
-    Here we are computing power for individual ponts, so, no integration is necessary, just
+    Here we are computing power for individual points, so, no integration is necessary, just
     compute area
    """     
    import numpy as np
@@ -297,9 +297,9 @@ def getPower(dB,x):
 
 def getHvsr(dBz,dB1,dB2,x,method=4):
    """
-   H is computed based on the selected method see: https://academic.oup.com/gji/article/194/2/936/597415
+   Hvsr is computed based on the selected method see: https://academic.oup.com/gji/article/194/2/936/597415
        method:
-          (1) DFA
+          (1) DFA (not in this function)
           (2) arithmetic mean, that is, H ≡ (HN + HE)/2
           (3) geometric mean, that is, H ≡ √HN · HE, recommended by the SESAME project (2004)
           (4) vector summation, that is, H ≡ √H2 N + H2 E 
@@ -314,7 +314,7 @@ def getHvsr(dBz,dB1,dB2,x,method=4):
    h1 = math.sqrt(p1)
    h2 = math.sqrt(p2)
 
-   h  ={2:(h1+h2)/2.0, 3:math.sqrt(h1 * h2), 4:math.sqrt(p1 + p2), 5: math.sqrt((p1 + p2)/2.0), 6: max(h1,h2)}
+   h  = {2:(h1+h2)/2.0, 3:math.sqrt(h1 * h2), 4:math.sqrt(p1 + p2), 5: math.sqrt((p1 + p2)/2.0), 6: max(h1,h2)}
 
    hvsr = h[method]/hz
    return hvsr
@@ -1188,7 +1188,7 @@ count           = -1
 #
 # compute one x-value (period or frequency) at a time to also compute standard deviation
 #
-outFile.write("frequency HVSR HVSR+1STD HVSR-1STD\n")
+outFile.write("#frequency HVSR HVSR+1STD HVSR-1STD\n")
 for j in range(len(xValues)-1):
    missing = 0
    hvsrTmp = []

@@ -82,7 +82,7 @@ method = 4
 #
 plot       = 1
 plotpsd    = 0
-plotpdf    = 1
+plotpdf    = 0
 plotbad    = 0
 yLabel     = "Power (dB)"
 xLabel     = {"frequency":"Frequency (Hz)", "period":"Period (s)"}
