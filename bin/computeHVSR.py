@@ -1035,9 +1035,9 @@ for channel in sortedChannelList:
 
       # create a second axes for the colorbar
       if plotPDF:
-         ax2 = fig.add_axes([0.92, 0.1, 0.01, 0.8])
-         fig.colorbar(im, ax2, orientation='vertical')
-         ax2.set_ylabel('Probability (%)', size=9, rotation=270, labelpad=7)
+         ax2 = fig.add_axes([0.92, 0.4, 0.01, 0.4])
+         cbar = fig.colorbar(im, ax2, orientation='vertical')
+         cbar.set_label('Probability (%)', size=9, rotation=270, labelpad=9)
          plt.clim(param.pMin,param.pMax)
 
    #
